@@ -21,6 +21,7 @@ export default function App() {
   const [isEdit, setIsEdit] = useState<string>("");
 
   const handleEditAddTask = () => {
+    // Dismiss the keyboard when done
     Keyboard.dismiss();
 
     if (isEdit) {
@@ -43,7 +44,8 @@ export default function App() {
   };
 
   const handleDeleteTask = (id: string) => {
-    let itemsCopy = taskItems.filter((task) => task.id !== id);
+    // Filter out the task to delete
+    const itemsCopy = taskItems.filter((task) => task.id !== id);
     setTaskItems(itemsCopy);
   };
 
